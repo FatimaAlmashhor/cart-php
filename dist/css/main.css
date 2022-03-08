@@ -1,0 +1,236 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100wv;
+  background: radial-gradient(#FFF, #E1E1E1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+}
+
+.container {
+  padding: 0px 2rem;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ju-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ju-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.it-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.btn {
+  padding: 1rem;
+  border: none;
+  background: black;
+  color: white;
+  margin: 0.8rem auto;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  background: white;
+  border: 1.5px solid black;
+  color: black;
+}
+
+main {
+  margin: 4rem 0px;
+}
+
+.header {
+  width: 100%;
+  min-height: 3rem;
+  background: pink;
+}
+
+.header-warrper {
+  position: relative;
+  height: inhert;
+  width: inhert;
+}
+
+.cart-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #dadada;
+  right: 0px;
+  top: 70%;
+  padding: 2px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 3px 3px black;
+          box-shadow: 3px 3px black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.cart-icon:hover {
+  -webkit-box-shadow: 0px 0px black;
+          box-shadow: 0px 0px black;
+}
+
+.cart-icon .cart-outline {
+  font-size: 4rem;
+}
+
+.project_cart {
+  margin: 1.4rem;
+  --cart-height: 400px;
+  position: relative;
+  width: 340px;
+  height: var(--cart-height);
+  line-height: 24px;
+}
+
+.project_cart .project_cart_warpper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.project_cart .project_cart_warpper .product_image {
+  position: relative;
+  height: 220px;
+  width: 100%;
+}
+
+.project_cart .project_cart_warpper .product_image_warrper {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.project_cart .project_cart_warpper .product_image_warrper::after {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.project_cart .project_cart_warpper .product_image_warrper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.project_cart .project_cart_warpper .product_content {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.project_cart .project_cart_warpper .product_content .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 70%;
+}
+
+.project_cart .project_cart_warpper .product_content .left a {
+  line-height: 4.5rem;
+}
+
+.cart_page {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(260px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: .5rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  /* Uncomment these lines if you want to have the standard Trello behavior instead of the column wrapping */
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 1fr);
+}
+/*# sourceMappingURL=main.css.map */

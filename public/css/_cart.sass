@@ -1,0 +1,116 @@
+main
+    margin: 4rem 0px
+.header
+    width: 100%
+    min-height: 3rem
+    background: pink
+.header-warrper
+    position: relative
+    height: inhert
+    width: inhert
+
+.cart-icon
+    position: absolute
+    width: 50px
+    height: 50px
+    background: $lightGray
+    right: 0px
+    top: 70%
+    padding: 2px
+    transform: translate(-50% , -50%)
+    display: flex
+    align-items: center
+    justify-content: center
+    box-shadow: 3px 3px black
+    transition: 0.4s
+    cursor: pointer
+    &:hover
+        box-shadow: 0px 0px black
+
+    .cart-outline
+        font-size: 4rem
+
+.project_cart
+    margin: 1.4rem
+    --cart-height: 400px
+    position: relative
+    // padding: 5px
+    width: 340px
+    height: var(--cart-height)
+    line-height: 24px
+    // background: #e9e9e9
+    // box-shadow: 5px 5px black
+    // border: 2px solid black
+    
+    .project_cart_warpper
+        position: relative
+        height: 100%
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-between 
+        // background: red
+        .product_image
+            position: relative
+            height: 220px
+            width: 100%
+            // flex: 1
+            &_warrper
+                position: absolute
+                left: -10px
+                top: -10px
+                width: 100%
+                height: 100%
+                overflow: hidden
+                // box-shadow: 5px 5px black
+                // border: 2px solid black
+                &::after
+                    position: relative
+                    width: 100%
+                    height: 100%
+                    border: 2px solid black
+
+                img
+                    object-fit: cover
+                    object-position: center
+                    width: 100%
+                    height: 100%
+
+        .product_content
+            height: max-content
+            flex: 2
+            .left
+                flex: 1
+                min-width: 70%
+                a
+                    line-height: 4.5rem
+
+
+// here the part of the cart page
+.cart_page
+    // align-items: center;
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))
+    grid-gap: .5rem
+    align-items: flex-start
+    /* Uncomment these lines if you want to have the standard Trello behavior instead of the column wrapping */
+    grid-auto-flow: column
+    grid-auto-columns: minmax(260px, 1fr)
+
+    .total_section
+        // width: 30%
+        height: 100%
+        // background: yellow
+    .product_section
+        flex: 1
+        // background: red
+
+.cart_card
+    // width: 100% 
+    // height: 360px
+    
+ @media all and (max-width: 450px)
+     .cart_page
+         grid-template-columns: 1fr
+         grid-row: 2
+
