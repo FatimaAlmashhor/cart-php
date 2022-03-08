@@ -27,9 +27,30 @@
             <div class=''>
                 <?php 
                     session_start();
+                    // deletion
                     if(isset($_GET['delete'])){
                         $index = trim($_GET['delete']) ;
                         unset($_SESSION['cart'][$index]);
+                    }
+
+                    if(isset($_GET['qty'])){
+                        if(isset($_GET['index'])) {
+                            $index = trim($_GET['index']);
+                            $qty = $_SESSION['cart'][$index]['qty'];
+                            $product_qty = $_SESSION['cart'][$index]['product_qty'] ;
+                            print_r( $product_qty);
+                            if($_GET['qty'] == 'inc'){
+                                if($product_qty > $qty){
+                                    $qty += 1;
+                                }
+                            }
+                            else if($_GET['qty'] == 'dec'){
+                                if($qty > 1)
+                                    $qty -= 1;
+                            }
+                            $_SESSION['cart'][$index]['qty']= $qty ;
+                        }
+                        
                     }
                     foreach( $_SESSION['cart'] as $key => $products){
                         // print_r($key)
@@ -63,6 +84,12 @@
                                                 <?php 
                                                     echo $products['qty'] ;
                                                 ?>
+                                                <a href='cart.php?qty=inc&index=
+                                                        <?php echo $key ;?>
+                                                '> + </a>
+                                                <a href='cart.php?qty=dec&index=
+                                                        <?php echo $key ;?>
+                                                '> - </a>
                                             </p>
                                         </div>
                                     </div>
