@@ -10,6 +10,9 @@
     <title>Cart</title>
 </head>
 <body>
+    <?php 
+        $total = 0 ;
+    ?>
     <header class="header container">
         <div class="header-warrper flex ju-center h-full it-center ju-between">
             <div>LOGO</div>
@@ -21,12 +24,11 @@
     <main class='main'>
         <h1>Cart </h1> 
         <div class='flex'>
-            <div class='total_section'>
-                <h3>Totla</h3>
-            </div>
+            
             <div class=''>
                 <?php 
                     session_start();
+                   
                     // deletion
                     if(isset($_GET['delete'])){
                         $index = trim($_GET['delete']) ;
@@ -38,7 +40,6 @@
                             $index = trim($_GET['index']);
                             $qty = $_SESSION['cart'][$index]['qty'];
                             $product_qty = $_SESSION['cart'][$index]['product_qty'] ;
-                            print_r( $product_qty);
                             if($_GET['qty'] == 'inc'){
                                 if($product_qty > $qty){
                                     $qty += 1;
@@ -52,8 +53,10 @@
                         }
                         
                     }
+                   
                     foreach( $_SESSION['cart'] as $key => $products){
-                        // print_r($key)
+                        $productTotla = ($products['product_price'] * $products['qty']) ;
+                        $total += $productTotla;
                         ?>
                             <div class="project_cart">
                                 <div class="project_cart_warpper">
@@ -78,7 +81,7 @@
                                         <div>
                                             <h3>
                                                 $
-                                                <?php echo $products['product_price'] ?>
+                                                <?php echo ( $productTotla) ?>
                                             </h3>
                                             <p>
                                                 <?php 
@@ -98,7 +101,15 @@
                         <?php
                     }
                     ?>
-                    </div>
-                </div>
+            </div>
+            <div class='total_section'>
+                <h3>
+                    <?php 
+                        echo $total;
+                    ?>
+                </h3>
+            </div>
+        </div>
+     
 </body>
 </html>
